@@ -32,7 +32,7 @@ $argumments = [];
 call_user_func_array([$controller, $methodName], $argumments);
 
 $data = $controller->getData();
-
+//var_dump($data);exit;
 $loader  =  new \Twig\Loader\FilesystemLoader("./view");
 $twig    =  new \Twig\Environment($loader, [
     "cache" => "./twig_cache",

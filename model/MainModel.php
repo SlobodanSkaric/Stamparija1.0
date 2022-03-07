@@ -9,7 +9,11 @@ class MainModel{
     }
 
     public function getAllMaterial(){
-        $sql = "SELECT * FROM pmaterial";
+        $sql = "SELECT 
+            pmaterial.material_number,
+            user.username
+         FROM pmaterial
+         INNER JOIN user ON pmaterial.user = user.user_id";
         $prepare = $this->dbc->prepare($sql);
         $users = [];
 
