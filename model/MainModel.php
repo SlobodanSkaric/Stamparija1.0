@@ -1,20 +1,16 @@
 <?php
-namespace Pre\Model;
+// This is old model not curen use
+/* namespace Pre\Model;
 
-class MainModel{
-    private $dbc;
-
-    public function __construct($dbc){
-        $this->dbc = $dbc;
-    }
-
+class MainModel extends Model{
+    
     public function getAllMaterial(){
         $sql = "SELECT 
             pmaterial.material_number,
             user.username
          FROM pmaterial
          INNER JOIN user ON pmaterial.user = user.user_id";
-        $prepare = $this->dbc->prepare($sql);
+        $prepare = $this->getDbc()->prepare($sql);
         $users = [];
 
         if(!$prepare){
@@ -29,4 +25,4 @@ class MainModel{
 
         return $users;
     }
-}
+} */
