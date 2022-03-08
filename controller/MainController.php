@@ -9,5 +9,6 @@ class MainController extends Controller{
         $mainModel   = new PmaterialModel($this->getConnection());
         $usersResult = $mainModel->getAll();
         $this->set("pmaterial", $usersResult);
+
     }
 }

@@ -2,15 +2,27 @@
 namespace Pre\Controller;
 
 use Pre\Core\DatabseConnection;
+use Pre\Core\Session\SessionManaged;
 
 class Controller{
     private $dbc;
     private $data = [];
+    private $session;
 
     public function __construct(DatabseConnection $dbc){
         $this->dbc = $dbc;
     }
 
+    public function setSession(SessionManaged $session){
+        $this->session = $session;
+    }
+
+   public function getSession():SessionManaged{
+       return $this->session;
+   }
+
+  
+  
     public function getConnection(){
         return $this->dbc->getConnectionSing();
     }

@@ -6,6 +6,7 @@ use Pre\Controller\MainController;
 use Pre\Core\ConfigurationPara;
 use Pre\Core\DatabaseConfiguration;
 use Pre\Core\DatabseConnection;
+use Pre\Core\Session\SessionManaged;
 use Pre\Model\MainModel;
 
 $dbconfig   = new DatabaseConfiguration(ConfigurationPara::HOSTNAME,ConfigurationPara::USERNAME,ConfigurationPara::PASSWORD,ConfigurationPara::DBNAME,ConfigurationPara::CHARSET);
@@ -22,12 +23,21 @@ foreach($routes as $route){
 }
 
 $foundRoute = $routing->metchRote($url, $method);
+$argumments = [];
 
 $controllerName = "Pre\\Controller\\" .  $foundRoute->getController() . "Controller";
+$controller = new $controllerName($conne);
 $methodName = $foundRoute->getMethod();
 
-$controller = new $controllerName($conne);
-$argumments = [];
+$sesionDataconst = ConfigurationPara::SESSION_CLASS_INSTANCE;
+$sessionPath     = ConfigurationPara::SESSION_PATH;
+$sessionInstance = new $sesionDataconst(...$sessionPath);
+
+$session = new SessionManaged($sessionInstance, ConfigurationPara::SESSION_TIME);
+$controller->setSession($session);
+
+
+
 
 call_user_func_array([$controller, $methodName], $argumments);
 
