@@ -23,18 +23,31 @@ foreach($routes as $route){
 }
 
 $foundRoute = $routing->metchRote($url, $method);
-$argumments = [];
+$argumments = $foundRoute->exractArgumnent($url);
+//print_r($argumments);exit;
 
 $controllerName = "Pre\\Controller\\" .  $foundRoute->getController() . "Controller";
-$controller = new $controllerName($conne);
-$methodName = $foundRoute->getMethod();
+$controller     = new $controllerName($conne);
+$methodName     = $foundRoute->getMethod();
 
-$sesionDataconst = ConfigurationPara::SESSION_CLASS_INSTANCE;
-$sessionPath     = ConfigurationPara::SESSION_PATH;
-$sessionInstance = new $sesionDataconst(...$sessionPath);
+$sesionDataconst  = ConfigurationPara::SESSION_CLASS_INSTANCE;
+$sessionPath      = ConfigurationPara::SESSION_PATH;
+$sessionInstance  = new $sesionDataconst(...$sessionPath);
+
+$fingerPrintClass  = ConfigurationPara::FINGER_PRINT_PDOVIDER_FACTORY;
+$fingerPrintethod  = ConfigurationPara:: FINGER_PRINT_METHOD;
+$fingerPrintParam  = ConfigurationPara::FINGER_PRINT_PARAMETER;
+$fingerPrintFacIns = new $fingerPrintClass();
+$fingerPrint       = $fingerPrintFacIns->$fingerPrintethod($fingerPrintParam);
+
 
 $session = new SessionManaged($sessionInstance, ConfigurationPara::SESSION_TIME);
 $controller->setSession($session);
+$controller->getSession()->setFingerPrint($fingerPrint);
+$controller->getSession()->reload();
+$controller->getSession()->put("username", "Username...");
+
+$controller->getSession()->saveSession();
 
 
 

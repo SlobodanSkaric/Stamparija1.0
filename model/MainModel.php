@@ -1,5 +1,5 @@
 <?php
-// This is old model not curen use
+// This is old model not curent use
 /* namespace Pre\Model;
 
 class MainModel extends Model{

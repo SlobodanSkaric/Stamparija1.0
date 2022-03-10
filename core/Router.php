@@ -45,4 +45,17 @@ class Router{
     public function getMethod(){
         return $this->method;
     }
+
+    public function exractArgumnent( $url){
+        $arguments = [];
+        $result= [];
+
+        preg_match_all($this->pattern, $url, $arguments);
+        //print_r($this->pattern);
+        if(isset($arguments[1])){
+            $result = $arguments[1];
+        }
+
+        return $result;
+    }
 }

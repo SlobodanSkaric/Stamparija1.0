@@ -38,4 +38,14 @@ class Controller{
     public function getData(){
         return $this->data;
     }
+
+    public function rol(){
+
+    }
+
+    public function redirect($path, int $code=302){
+        ob_clean();
+        header("Location: " . $path, true, $code);
+        exit;
+    }
 }
