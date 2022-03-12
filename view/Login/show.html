@@ -1,0 +1,22 @@
+{% extends "_mainpage/index.html "%}
+{% block main%}
+<div class="row offset-4 ">
+    <div class="col-sm-12 col-md-6 col-xl-6 login">
+        <form  method="POST">
+            <div class="mt-4 col-sm-12">
+                <label for="user">Username</label>
+                <input type="text" class="form-control" id="user" name="username">
+            </div>
+            <div class="mt-4 col-sm-12">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" id="pass" name="password">
+            </div>
+            <div class="col-sm-12 text-center mt-4 ">
+                <button class="btn btn-primary ">Prijavi se</button>
+            </div>
+            <div class="form-text text-center mt-4 col-sm-12"><a href="registration">Registruj se</a></div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

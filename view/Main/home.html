@@ -1,5 +1,6 @@
 {% extends "_mainpage/index.html" %}
 {% block main %}
+
 {% set counter = 1 %}
     <div class="row tbl">
         <div class="col">
@@ -15,8 +16,8 @@
                     {% for param in pmaterial %}
                     <tr>
                         <th scope="row">{{ counter }}</th>
-                        <td><a href="./material/{{ param.material_number }}">{{ param.material_number }}</a></td>
-                        <td><a href="./useracount/{{ param.user }}">{{ param.username }}</a></td>
+                        <td><a href="material/{{ param.material_number }}">{{ param.material_number }}</a></td>
+                        <td><a href="useracount/{{ param.user }}">{{ param.username }}</a></td>
                     </tr>
                     {% set counter = counter +  1 %}
                     {% endfor %}

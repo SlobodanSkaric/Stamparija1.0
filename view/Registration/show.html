@@ -1,0 +1,39 @@
+{% extends "_mainpage/index.html"%}
+{% block main %}
+<div class="row offset-3">
+    <div class="col-sm-12 col-md-8 col-xl-8 login">
+        <form method="POST">
+            <div class="row">
+                <div class="mt-4 col-md-6">
+                    <label for="name">Ime</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mt-4 col-md-6">
+                    <label for="lastname">Prezime</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" >
+                </div>
+                <div class="mt-4">
+                    <label for="username">Korisnicko Ime</label>
+                    <input type="text" class="form-control" id="username" name="usname">
+                </div>
+                <div class="mt-4">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="mt-4 col-md-6">
+                    <label for="pass">Lozinka</label>
+                    <input type="password" class="form-control" id="pass" name="password">
+                </div>
+                <div class="mt-4 col-md-6">
+                    <label for="passr">Ponovi lozinku</label>
+                    <input type="password" class="form-control" id="passr" name="passrepeat">
+                </div>
+                <div class="clo-md-6 text-center">
+                    <button class="btn btn-primary mt-4">Registruj se</button>
+                </div>
+            
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

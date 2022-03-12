@@ -42,4 +42,40 @@ use PDO;
         return $res;
     }
 
+    public function getFild($fildName, $value){
+        $tableName = $this->getTableName();
+
+        $sql = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
+        $prepare = $this->getDbc()->prepare($sql);
+        $execute = $prepare->execute([$value]);
+        $result = NULL;
+
+        if($execute){
+            $result = $prepare->fetch(PDO::FETCH_OBJ);
+        }
+
+        return $result;
+    }
+
+    public function add($data){
+        $tableName = $this->getTableName();
+
+        $dataKey   = array_keys($data);
+        $dataValue = array_values($data);
+
+        $tableFildvalue      = implode(",", $dataKey);
+        $questionMarksRepeat = str_repeat("?,", count($data));
+        $questionMarks       = substr($questionMarksRepeat,0,-1);
+        
+        $sql     = "INSERT INTO {$tableName} ({$tableFildvalue}) VALUES ({$questionMarks})";
+        $prepare = $this->getDbc()->prepare($sql);
+        $execute = $prepare->execute($dataValue);
+
+        if(!$execute){
+            return false;
+        }
+
+        return $this->getDbc()->lastInsertId();
+    }
+
 }

@@ -42,18 +42,17 @@ $fingerPrint       = $fingerPrintFacIns->$fingerPrintethod($fingerPrintParam);
 
 
 $session = new SessionManaged($sessionInstance, ConfigurationPara::SESSION_TIME);
+
 $controller->setSession($session);
 $controller->getSession()->setFingerPrint($fingerPrint);
 $controller->getSession()->reload();
-$controller->getSession()->put("username", "Username...");
-
-$controller->getSession()->saveSession();
+$controller->rol();
 
 
 
 
 call_user_func_array([$controller, $methodName], $argumments);
-
+//$controller->getSession()->saveSession();
 $data = $controller->getData();
 
 $loader  =  new \Twig\Loader\FilesystemLoader("./view");
