@@ -105,3 +105,44 @@ tbody td a:hover{
     text-decoration: none;
     color: #fff;
 }
+
+.material{
+    margin-top: 30px;
+    background-color: rgba(23, 36, 36, 0.596);
+    color: #fff;
+    padding: 10px;
+}
+
+.material form{
+    padding: 0px;
+    margin: 0px;
+}
+
+.materialoverflo{
+    height: 410px;
+    overflow: scroll;
+}
+
+.btn-set{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-set  a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.tblc{
+    margin-top: 30px;
+    padding: 0px;
+}
+
+.tblc > div{
+    padding: 0px 30px;
+}
+
+.tblc table > thead  {
+    color: #fff;
+    background-color: rgba(23, 36, 36, 0.596);
+}

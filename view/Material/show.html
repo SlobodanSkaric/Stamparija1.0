@@ -1,0 +1,222 @@
+{% extends "_mainpage/index.html "%}
+{% block main %}
+
+    
+        <form method="POST">
+            
+                <div class="row material">
+                    <div class="col-sm-12 col-md-6 ">
+                        <label for="mnumber">Broj Naloga</label>
+                        <input type="text" class="form-control" id="mnumber" name="numbermaterial">
+                    </div>
+                    <div class="col-sm-12 col-md-6 ">
+                        <label for="count">Kolicina</label>
+                        <input type="number" class="form-control" id="count" name="countmaterial">
+                    </div>
+                    <div class="col-sm-12 col-md-12 mt-4">
+                        <select name="mark" id="" class="form-select">
+                            <option value="gorenje" selected>Gorenje</option>
+                            <option value="sumit">Sumit</option>
+                            <option value="smeg">Smeg</option>
+                            <option value="ge">Ge</option>
+                        </select>
+                    </div>
+                </div>
+            
+            <div class="row">
+              
+                <div class="col-md-3 tbl materialoverflo text-center">
+                    <table class="table table-striped">
+                        <thead class="">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Materijal</th>
+                                <th scope="col">Kolicina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input ">
+                                    </div>
+                                </th>
+                                <td>348810</td>
+                                <td>
+                                    <input type="number" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-7">
+                    {% set counter = 1 %}
+                        <div class="row tblc">
+                            <div class="col">
+                                <table class="table table-striped">
+                                    <thead class="">
+                                        <tr>
+                                            <th scope="col" class="col-sm-2 col-md-2 align-middle text-center">Redni Broj</th>
+                                            <th scope="col" class="col-sm-2 col-md-2 align-middle text-center">Broj Naloga</th>
+                                            <th scope="col" class="col-sm-2 col-md-2 align-middle text-center">Uradio</th>
+                                            <th scope="col" class="col-sm-2 col-md-2 text-center">Datum Stampanja</th>
+                                            <th scope="col" class="col-sm-2 col-md-2 text-center">Datum Izdavanja</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for param in pmaterial %}
+                                        <tr>
+                                            <th scope="row">{{ counter }}</th>
+                                            <td><a href="./material/{{ param.material_number }}">{{ material.numbr_material }}</a></td>
+                                            <td><a href="./useracount/{{ param.user }}">{{ material.user }}</a></td>
+                                            <td><a href="#">{{ material.create_at}}</a></td>
+                                            <td><a href="#">{{ material.publishing  }}</a></td>
+                                        </tr>
+                                        {% set counter = counter +  1 %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2 btn-set">
+                    <div class="row">
+                        <button class="btn btn-primary">Sasuvaj</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary mt-3"><a href="#">Panel</a></button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary mt-3"><a href="#">Panel</a></button>
+                    </div>
+                   
+                </div>
+            </div>           
+        </form>
+  
+{% endblock %}
