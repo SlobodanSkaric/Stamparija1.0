@@ -8,6 +8,6 @@ class UserController extends UserRole{
     public function show(){
         $logMaterial = new LogMaterialModel($this->getConnection());
         $data        = $logMaterial->getAll();
-        $this->set("material", $data);
+        $this->set("pmaterial", $data);
     }
 }

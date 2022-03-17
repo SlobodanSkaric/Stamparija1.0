@@ -18,9 +18,9 @@
                     <tr>
                         <th scope="row">{{ counter }}</th>
                         <td><a href="./material/{{ param.material_number }}">{{ material.numbr_material }}</a></td>
-                        <td><a href="./useracount/{{ param.user }}">{{ material.user }}</a></td>
-                        <td><a href="#">{{ material.create_at}}</a></td>
-                        <td><a href="#">{{ material.publishing  }}</a></td>
+                        <td><a href="./useracount/{{ param.user }}">{{ param.user }}</a></td>
+                        <td><a href="#">{{ param.create_at}}</a></td>
+                        <td><a href="#">{{ param.publishing  }}</a></td>
                     </tr>
                     {% set counter = counter +  1 %}
                     {% endfor %}
