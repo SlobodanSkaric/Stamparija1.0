@@ -7,7 +7,10 @@ use Pre\Model\LogMaterialModel;
 class MaterialController extends UserRole{
     
     public function show(){
-        
+        $losgmaterialModel = new LogMaterialModel($this->getConnection());
+        $data = $losgmaterialModel->getAll();
+
+        $this->set("setmaerial", $data);
     }
 
     public function record(){
@@ -27,7 +30,9 @@ class MaterialController extends UserRole{
             "mark" => $mark
         ]);
 
-        if($add){
+        
+
+        if(isset($add)){
             $this->redirect("/press/material/");
         }
     }

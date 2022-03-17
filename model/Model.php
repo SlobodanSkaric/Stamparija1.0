@@ -59,10 +59,10 @@ use PDO;
 
     public function add($data){
         $tableName = $this->getTableName();
-
+        
         $dataKey   = array_keys($data);
         $dataValue = array_values($data);
-
+        
         $tableFildvalue      = implode(",", $dataKey);
         $questionMarksRepeat = str_repeat("?,", count($data));
         $questionMarks       = substr($questionMarksRepeat,0,-1);

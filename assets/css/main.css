@@ -146,3 +146,7 @@ tbody td a:hover{
     color: #fff;
     background-color: rgba(23, 36, 36, 0.596);
 }
+
+.scr{
+    overflow: scroll;
+}

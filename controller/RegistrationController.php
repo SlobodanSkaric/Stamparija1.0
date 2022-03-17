@@ -15,7 +15,7 @@ class RegistrationController extends Controller{
         $email      = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
         $password1  = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
         $password2  = filter_input(INPUT_POST, "passrepeat", FILTER_SANITIZE_STRING);
-
+        //print_r($name. "" . $lastName . " " . $email . " " . $password1 . " " . $password2);
        if($password1 != $password2){
             $this->set("message", "Oba pasvarda moraju biti ista.");
             return;
@@ -26,13 +26,13 @@ class RegistrationController extends Controller{
        $userModel = new UserModel($this->getConnection());
 
        $result = $userModel->add([
-           "firstname" => $name,
-           "lastname"  => $lastName,
-           "username"  => $username,
-           "password"  => $pasHesh,
-           "email"     => $email
+           "firstname"      => $name,
+           "lastname"       => $lastName,
+           "username"       => $username,
+           "password_hash"  => $pasHesh,
+           "email"          => $email
        ]);
-        
+      
        if(isset($result)){
            $this->set("message", "Uspesno ste kreirali nalog");
            $this->redirect("/press/");
