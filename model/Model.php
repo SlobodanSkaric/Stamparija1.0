@@ -14,8 +14,12 @@ use PDO;
     protected function getDbc(){
         return $this->dbc;
     }
+
+    protected function getFilds(){
+        return [];
+    }
     
-    public function getTableName(){
+    private function getTableName(){
         $className  = static::class;
         $tempName   = [];
         preg_match("|^Pre\\\Model\\\([A-Z][a-z]+([A-Z][a-z]+)?)Model$|",$className, $tempName);

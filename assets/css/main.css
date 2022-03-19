@@ -148,5 +148,6 @@ tbody td a:hover{
 }
 
 .scr{
+    height: 410px;
     overflow: scroll;
 }

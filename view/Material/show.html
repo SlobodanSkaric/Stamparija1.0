@@ -177,7 +177,7 @@
                 <div class="col-md-7">
                     {% set counter = 1 %}
                         <div class="row tblc">
-                            <div class="col">
+                            <div class="col scr">
                                 <table class="table table-striped">
                                     <thead class="">
                                         <tr>
@@ -188,12 +188,12 @@
                                             <th scope="col" class="col-sm-2 col-md-2 text-center">Datum Izdavanja</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="scr">
+                                    <tbody >
                                         {% for param in setmaerial %}
                                         <tr class="text-center">
                                             <th scope="row">{{ counter }}</th>
-                                            <td><a href="./material/{{ param.material_number }}">{{ param.numbr_material }}</a></td>
-                                            <td><a href="./useracount/{{ param.user }}">{{ param.user }}</a></td>
+                                            <td><a href="material/{{ param.material_number }}">{{ param.numbr_material }}</a></td>
+                                            <td><a href="useracount/{{ param.user }}">{{ param.user }}</a></td>
                                             <td><a href="#">{{ param.create_at}}</a></td>
                                             <td><a href="#">{{ param.publishing  }}</a></td>
                                         </tr>

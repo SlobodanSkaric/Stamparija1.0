@@ -47,12 +47,12 @@ $controller->setSession($session);
 $controller->getSession()->setFingerPrint($fingerPrint);
 $controller->getSession()->reload();
 
-
+$controller->rol();
 
 
 
 call_user_func_array([$controller, $methodName], $argumments);
-$controller->rol();
+
 $data = $controller->getData();
 
 $loader  =  new \Twig\Loader\FilesystemLoader("./view");
