@@ -1,6 +1,7 @@
 <?php
 namespace Pre\Model;
 
+use Exception;
 use PDO;
 
  class Model{
@@ -15,7 +16,7 @@ use PDO;
         return $this->dbc;
     }
 
-    protected function getFilds(){
+    public function getFilds(){
         return [];
     }
     
@@ -29,6 +30,39 @@ use PDO;
         $tableName       = strtolower($calssSubst);
 
         return $tableName;
+    }
+
+    private function checkedFiledList($data,$value){
+        $fildSuported = $this->getFilds();
+
+        if(!array_key_exists($data, $fildSuported)){
+            return  new Exception("Fild name " . $data . " is not siported...");
+        }
+
+        if(!$fildSuported[$data]->isValid($value)){
+            return new Exception("This value is not valid.");
+        }
+    }
+
+    private function checkedAllFiledList($data){
+        $fildeSuport = $this->getFilds();
+
+        $suportedFildeName = array_keys($fildeSuport);
+        $requestedFildeNames = array_keys($data);
+
+        foreach($requestedFildeNames as $requestedFildeName){
+            if(!in_array($requestedFildeName, $suportedFildeName)){
+                return new Exception("Fild name " . $requestedFildeName . " is not suported");
+            }
+
+            if(!$fildeSuport[$requestedFildeName]->editTable()){
+                return new Exception("Filde " . $requestedFildeName . " is not editable");
+            }
+
+            if(!$fildeSuport[$requestedFildeName]->isValid($data[$requestedFildeName])){
+                return new Exception("Valur+e in" . $data[$requestedFildeName]. " filde is not valid");
+            }
+        }
     }
 
     public function getAll(){
@@ -47,6 +81,7 @@ use PDO;
     }
 
     public function getFild($fildName, $value){
+        $this->checkedFiledList($fildName, $value);
         $tableName = $this->getTableName();
 
         $sql = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
@@ -62,6 +97,7 @@ use PDO;
     }
 
     public function add($data){
+        $this->checkedAllFiledList($data);
         $tableName = $this->getTableName();
         
         $dataKey   = array_keys($data);
