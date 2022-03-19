@@ -11,7 +11,7 @@ class Field{
     }
 
     public function isValid($value){
-        $this->validator->isValid($value);
+        return $this->validator->isValid($value);
     }
 
     public function editTable(){
