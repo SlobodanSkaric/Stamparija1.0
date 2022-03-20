@@ -5,7 +5,7 @@ use Pre\Core\Field;
 use Pre\Validators\StringValidator;
 
 class UserModel extends Model{
-    protected function getFilds(){
+    public function getFilds(){
         return [
             "firstname"     => new Field((new StringValidator)->maxStringLenght(50)),
             "lastname"      => new Field((new StringValidator)->maxStringLenght(50)),

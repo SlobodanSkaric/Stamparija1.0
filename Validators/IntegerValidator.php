@@ -42,6 +42,8 @@ class IntegerValidator implements Validator{
             $pre .= "\.[0-9]{1,3}";
         }
 
+        $pre .= "$|";
+
         return boolval(preg_match($pre, $value));
     }
 }

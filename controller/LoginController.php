@@ -32,7 +32,7 @@ class LoginController extends Controller{
         
         $this->getSession()->reload();
 
-        $this->redirect("/press/useracount/".$usernameCheck->user_id);
+        $this->redirect("/press/material/".$usernameCheck->user_id);
 
 
         //$this->set("message", $usernameCheck->user_id);

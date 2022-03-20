@@ -5,25 +5,27 @@ use Pre\Core\Validator;
 use Stringable;
 
 class StringValidator implements Validator{
-    private $minStringLenght;
-    private $maxStringLenght;
+    private $minStringLen;
+    private $maxStringLen;
 
     public function __construct(){
-        $this->minStringLenght = 0;
-        $this->maxStringLenght = 80;
+        $this->minStringLen = 0;
+        $this->maxStringLen = 80;
     }
 
-    public function minStrinLenght($minStr):StringValidator{
-        $this->minStringLenght = $minStr;
+    public function minStrinLenght($min):StringValidator{
+        $this->minStringLen = min(0,$min);
         return $this;
     }
 
     public function maxStringLenght($max):StringValidator{
-        $this->maxStr = $max;
+        $this->maxStringLen = max(1,$max);
         return $this;
     }
     
     public function isValid(string $value): bool{
-        return boolval($this->minStringLenght < $value && $this->maxStringLenght > $value);
+        $len = strlen($value);
+      
+        return boolval($this->minStringLen <= $len && $len <= $this->maxStringLen);
     }
 }

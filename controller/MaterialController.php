@@ -19,15 +19,15 @@ class MaterialController extends UserRole{
         $mark           = filter_input(INPUT_POST, "mark", FILTER_SANITIZE_STRING);
         $user           = $this->getSession()->get("user_id");
         $active         = 1;
-
+        
         $logMaterial = new LogMaterialModel($this->getConnection());
 
         $add = $logMaterial->add([
             "numbr_material" => $nummaterial,
-            "user" => $user,
-            "count" => $countMataerial,
-            "is_activ" => $active,
-            "mark" => $mark
+            "user"           => $user,
+            "count"          => $countMataerial,
+            "is_activ"       => $active,
+            "mark"           => $mark
         ]);
 
         

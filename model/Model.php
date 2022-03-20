@@ -47,20 +47,21 @@ use PDO;
     private function checkedAllFiledList($data){
         $fildeSuport = $this->getFilds();
 
-        $suportedFildeName = array_keys($fildeSuport);
+        $suportedFildeName   = array_keys($fildeSuport);
         $requestedFildeNames = array_keys($data);
 
         foreach($requestedFildeNames as $requestedFildeName){
+            
             if(!in_array($requestedFildeName, $suportedFildeName)){
-                return new Exception("Fild name " . $requestedFildeName . " is not suported");
+                throw new \Exception("Fild name " . $requestedFildeName . " is not suported");
             }
-
+            
             if(!$fildeSuport[$requestedFildeName]->editTable()){
-                return new Exception("Filde " . $requestedFildeName . " is not editable");
+                throw new \Exception("Filde " . $requestedFildeName . " is not editable");
             }
-
+           
             if(!$fildeSuport[$requestedFildeName]->isValid($data[$requestedFildeName])){
-                return new Exception("Valur+e in" . $data[$requestedFildeName]. " filde is not valid");
+                throw new \Exception("Value in" . $data[$requestedFildeName]. " filde is not valid");
             }
         }
     }
