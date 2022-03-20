@@ -3,6 +3,7 @@ namespace Pre\Controller;
 
 use Pre\Core\Role\UserRole;
 use Pre\Model\LogMaterialModel;
+use Pre\Validators\StringValidator;
 
 class MaterialController extends UserRole{
     
@@ -21,6 +22,16 @@ class MaterialController extends UserRole{
         $active         = 1;
         
         $logMaterial = new LogMaterialModel($this->getConnection());
+
+        if((new StringValidator())->stricStringLenght(12)->strictValid($nummaterial)){
+            $this->set("message", "Format broja naloga nije ispravan. Nalog mora imati tacno 12 cifara.");
+            return;
+        }
+
+        if(!preg_match("|^[1-9][0-9]+$|", $nummaterial)){
+            $this->set("message", "Broj naloga moze sadrzati samo cifre");
+            return;
+        }
 
         $add = $logMaterial->add([
             "numbr_material" => $nummaterial,
