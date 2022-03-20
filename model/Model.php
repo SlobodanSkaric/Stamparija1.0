@@ -36,11 +36,11 @@ use PDO;
         $fildSuported = $this->getFilds();
 
         if(!array_key_exists($data, $fildSuported)){
-            return  new Exception("Fild name " . $data . " is not siported...");
+            throw  new Exception("Fild name " . $data . " is not siported...");
         }
 
         if(!$fildSuported[$data]->isValid($value)){
-            return new Exception("This value is not valid.");
+            throw new Exception("This value is not valid.");
         }
     }
 

@@ -14,12 +14,12 @@ class StringValidator implements Validator{
     }
 
     public function minStrinLenght($min):StringValidator{
-        $this->minStringLen = min(0,$min);
+        $this->minStringLen = $min;
         return $this;
     }
 
     public function maxStringLenght($max):StringValidator{
-        $this->maxStringLen = max(1,$max);
+        $this->maxStringLen = $max;
         return $this;
     }
     
