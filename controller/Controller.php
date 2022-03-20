@@ -45,7 +45,7 @@ class Controller{
 
     public function redirect($path, int $code=302){
         ob_clean();
-        header("Location: " . $path, true, $code);
+        header("Location: " . $path);
         exit;
     }
 }

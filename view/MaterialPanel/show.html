@@ -1,0 +1,63 @@
+{% extends "_mainpage/index.html" %}
+{% block main %}
+<div class="row tbl">
+    <div class="col text-center">
+        <table class="table table-striped">
+            <thead class="">
+                <tr>
+                    <th scope="col">Broj Naloga</th>
+                    <th scope="col">Uradio</th>
+                    <th scope="col">Datum Izrade</th>
+                    <th scope="col">Stanje</th>
+                    <th scope="col">Datum Izdavanja</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ material.numbr_material }}</th>
+                    <td>{{ user.username }}</td>
+                    <td>{{ material.create_at}}</td>
+                    <td>/</td>
+                    <td>/</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <div class="card">
+            <div class="card-header"><h3>Materijal</h3></div>
+            <div class="card-body">
+                <div class="card-title"></div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">348810 <input type="number" ></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number" ></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                    <div class="col-md-4 mt-4">348810 <input type="number"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <div class="card">
+            <div class="card-header"><h3>Napomena</h3></div>
+            <div class="card-body">
+                <div class="card-title"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

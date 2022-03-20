@@ -7,6 +7,7 @@ return [
     Pre\Core\Router::post("|^registration/?$|",          "Registration",     "rgistration"),
 
     Pre\Core\Router::get("|^material/?$|",               "Material",         "show"),
+    Pre\Core\Router::get("|^material/([1-9][0-9]+)$|",   "MaterialPanel",    "show"),
     Pre\Core\Router::post("|^material/?$|",              "Material",         "record"),
 
     Pre\Core\Router::get("|^useracount/([0-9]+)$|",      "User" ,            "show"),

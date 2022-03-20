@@ -183,19 +183,15 @@
                                         <tr>
                                             <th scope="col" class="col-sm-2 col-md-2 align-middle text-center">Redni Broj</th>
                                             <th scope="col" class="col-sm-2 col-md-2 align-middle text-center">Broj Naloga</th>
-                                            <th scope="col" class="col-sm-2 col-md-2 align-middle text-center">Uradio</th>
                                             <th scope="col" class="col-sm-2 col-md-2 text-center">Datum Stampanja</th>
-                                            <th scope="col" class="col-sm-2 col-md-2 text-center">Datum Izdavanja</th>
                                         </tr>
                                     </thead>
                                     <tbody >
                                         {% for param in setmaerial %}
                                         <tr class="text-center">
                                             <th scope="row">{{ counter }}</th>
-                                            <td><a href="material/{{ param.material_number }}">{{ param.numbr_material }}</a></td>
-                                            <td><a href="useracount/{{ param.user }}">{{ param.user }}</a></td>
+                                            <td><a href="/press/material/{{ param.numbr_material }}">{{ param.numbr_material }}</a></td>
                                             <td><a href="#">{{ param.create_at}}</a></td>
-                                            <td><a href="#">{{ param.publishing  }}</a></td>
                                         </tr>
                                         {% set counter = counter +  1 %}
                                         {% endfor %}
