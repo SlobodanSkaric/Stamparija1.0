@@ -1,0 +1,32 @@
+{% extends "_mainpage/index.html" %}
+{% block main %}
+{% set counter = 1 %}
+    <div class="row tbl">
+        <div class="col">
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Br.</th>
+                        <th scope="col">Broj Naloga</th>
+                        <th scope="col">Kolicina</th>
+                        <th scope="col">Izdati</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for curent in material %}
+                    <tr>
+                        <th scope="row">{{ counter }}</th>
+                        <td><a href="material/{{ curent.numbr_material }}">{{ curent.numbr_material }}</a></td>
+                        <td>{{ curent.count }}</td>
+                        <td >
+                            
+                                <input type="checkbox" class="form-check-input" name="val{{ counter }}" value="{{ curent.numbr_material}}"></div>
+                        </td>
+                    </tr>
+                    {% set counter = counter +  1 %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock  %}

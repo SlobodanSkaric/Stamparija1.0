@@ -97,6 +97,22 @@ use PDO;
         return $result;
     }
 
+    public function getFildAll($fildName, $value){
+        $this->checkedFiledList($fildName, $value);
+        $tableName = $this->getTableName();
+
+        $sql = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
+        $prepare = $this->getDbc()->prepare($sql);
+        $execute = $prepare->execute([$value]);
+        $result = [];
+
+        if($execute){
+            $result = $prepare->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        return $result;
+    }
+
     public function add($data){
         $this->checkedAllFiledList($data);
         $tableName = $this->getTableName();
