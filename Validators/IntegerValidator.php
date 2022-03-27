@@ -36,7 +36,7 @@ class IntegerValidator implements Validator{
             $pre .= "\-";
         }
 
-        $pre .= "[1-9][0-9]{0,". $this->intLenght ."}";
+        $pre .= "[0-9][0-9]{0,". $this->intLenght ."}";
 
         if($this->isDecimal){
             $pre .= "\.[0-9]{1,3}";

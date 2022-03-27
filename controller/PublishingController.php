@@ -11,4 +11,26 @@ class PublishingController extends UserRole{
         
         $this->set("material", $logMaterial);
     }
+
+    public function search(string $numberMaterial){
+
+    }
+
+    public function pub(){
+        $checked = filter_input(INPUT_POST, "valche", FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
+        $dateTime = date("Y-m-d H:i:s");
+       
+        $logMaterilaModel = new LogMaterialModel($this->getConnection());
+
+        $dataList = [
+            "is_activ"   => 0,
+            "publishing" =>  $dateTime
+        ];
+
+        foreach($checked as $data=>$value){
+            $logMaterilaModel->update($value, $dataList);
+        }
+
+        $this->redirect("/press/publishing");
+    }
 }

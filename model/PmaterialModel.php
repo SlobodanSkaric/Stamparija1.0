@@ -14,4 +14,8 @@ class PmaterialModel extends Model{
             "username"          => new Field((new StringValidator())->maxStringLenght(50))
         ];
     }
+
+    public function getMaterial(string $numberMaterial){
+        
+    }
 }

@@ -113,6 +113,10 @@ use PDO;
         return $result;
     }
 
+    public function getLike($filedName, $value){
+
+    }
+
     public function add($data){
         $this->checkedAllFiledList($data);
         $tableName = $this->getTableName();
@@ -135,4 +139,26 @@ use PDO;
         return $this->getDbc()->lastInsertId();
     }
 
+    public function update($id, $data){
+        $tableName = $this->getTableName();
+
+        $this->checkedAllFiledList($data);
+
+        $editList  = [];
+        $value     = [];
+
+        foreach($data as $dataName=>$dataValue){
+            $editList[]  = "{$dataName}=?";
+            $value[]     = $dataValue;
+        }
+
+        $edit    = implode(",", $editList);
+        $value[] = $id;
+
+        $sql     = "UPDATE {$tableName} SET {$edit} WHERE {$tableName}_id=?";
+        $prep    = $this->getDbc()->prepare($sql);
+        $execute = $prep->execute($value);
+
+        return $execute;
+    }
 }

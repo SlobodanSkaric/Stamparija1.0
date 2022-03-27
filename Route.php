@@ -10,6 +10,7 @@ return [
     Pre\Core\Router::get("|^material/([1-9][0-9]+)$|",   "MaterialPanel",    "show"),
     Pre\Core\Router::post("|^material/?$|",              "Material",         "record"),
     Pre\Core\Router::get("|^publishing/?$|",             "Publishing",       "show"),
+    Pre\Core\Router::post("|^publishing/?$|",            "Publishing",       "pub"),
 
     Pre\Core\Router::get("|^useracount/([0-9]+)$|",      "User" ,            "show"),
 
