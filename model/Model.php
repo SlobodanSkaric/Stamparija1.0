@@ -165,7 +165,7 @@ use PDO;
     public function search($fild, $value){
         $table = $this->getTableName();
 
-       // $this->checkedFiledList($fild,$value);
+       $this->checkedFiledList($fild,$value);
 
         $sql = "SELECT * FROM {$table} WHERE {$fild} LIKE ?";
         $prep = $this->getDbc()->prepare($sql);
