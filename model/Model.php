@@ -161,4 +161,22 @@ use PDO;
 
         return $execute;
     }
+
+    public function search($fild, $value){
+        $table = $this->getTableName();
+
+       // $this->checkedFiledList($fild,$value);
+
+        $sql = "SELECT * FROM {$table} WHERE {$fild} LIKE ?";
+        $prep = $this->getDbc()->prepare($sql);
+        $exeAeg = "%".$value."%";
+        $execute = $prep->execute([$exeAeg]);
+        $result = [];
+
+        if($execute){
+            $result = $prep->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        return $result;
+    }
 }

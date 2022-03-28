@@ -2,7 +2,7 @@
 
 return [
     Pre\Core\Router::get("|^login/?$|",                  "Login",            "show"),
-    Pre\Core\Router::post("|^login/?$|",                 "Login",           "login"),
+    Pre\Core\Router::post("|^login/?$|",                 "Login",            "login"),
     Pre\Core\Router::get("|^registration/?$|",           "Registration",     "show"),
     Pre\Core\Router::post("|^registration/?$|",          "Registration",     "rgistration"),
 
@@ -13,6 +13,9 @@ return [
     Pre\Core\Router::post("|^publishing/?$|",            "Publishing",       "pub"),
 
     Pre\Core\Router::get("|^useracount/([0-9]+)$|",      "User" ,            "show"),
+
+    #ApiRoute
+    Pre\Core\Router::get("|^api/search/([0-9]+)$|",      "ApiSearch",        "search"),
 
 
     Pre\Core\Router::get("|^.*$|",                       "Main" ,            "home")

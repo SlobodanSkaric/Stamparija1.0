@@ -117,9 +117,9 @@
                                             <th scope="col" class="col-sm-2 col-md-2 text-center">Datum Stampanja</th>
                                         </tr>
                                     </thead>
-                                    <tbody >
+                                    <tbody class="resultSearch">
                                         {% for param in setmaerial %}
-                                        <tr class="text-center">
+                                        <tr class="text-center ">
                                             <th scope="row">{{ counter }}</th>
                                             <td><a href="/press/material/{{ param.numbr_material }}">{{ param.numbr_material }}</a></td>
                                             <td><a href="#">{{ param.create_at}}</a></td>
@@ -145,5 +145,5 @@
                 </div>
             </div>           
         </form>
-  
+  <script src="/press/assets/js/searchApi.js"></script>
 {% endblock %}

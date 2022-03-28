@@ -2,6 +2,8 @@
 
 require "vendor/autoload.php";
 
+ob_clean();
+
 use Pre\Controller\MainController;
 use Pre\Core\ConfigurationPara;
 use Pre\Core\DatabaseConfiguration;
@@ -54,6 +56,14 @@ $controller->rol();
 call_user_func_array([$controller, $methodName], $argumments);
 
 $data = $controller->getData();
+
+if($controller instanceof \Pre\Controller\ApiController){
+    ob_clean();
+    header("Content-type: application/json; charset=utf-8");
+    header("Access-Control-Allow-Origin: *");
+    echo json_encode($data);
+    exit;
+}
 
 $loader  =  new \Twig\Loader\FilesystemLoader("./view");
 $twig    =  new \Twig\Environment($loader, [

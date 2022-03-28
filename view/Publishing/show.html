@@ -14,15 +14,14 @@
                             <th scope="col"><button class="btn btn-primary">Izdaj</button></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="resultSearch">
                         {% for curent in material %}
                         <tr>
                             <th scope="row">{{ counter }}</th>
                             <td><a href="material/{{ curent.numbr_material }}">{{ curent.numbr_material }}</a></td>
                             <td>{{ curent.count }}</td>
                             <td >
-                                
-                                    <input type="checkbox" class="form-check-input" name="valche[]" value="{{ curent.log_material_id}}"></div>
+                               <input type="checkbox" class="form-check-input" name="valche[]" value="{{ curent.log_material_id}}"></div>
                             </td>
                             <td></td>
                         </tr>
@@ -33,4 +32,5 @@
             </div>
         </div>
     </form>
+    <script src="/press/assets/js/searchApi.js"></script>
 {% endblock  %}
