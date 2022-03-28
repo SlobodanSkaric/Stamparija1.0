@@ -85,10 +85,10 @@ use PDO;
         $this->checkedFiledList($fildName, $value);
         $tableName = $this->getTableName();
 
-        $sql = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
+        $sql     = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
         $prepare = $this->getDbc()->prepare($sql);
         $execute = $prepare->execute([$value]);
-        $result = NULL;
+        $result  = NULL;
 
         if($execute){
             $result = $prepare->fetch(PDO::FETCH_OBJ);
@@ -101,10 +101,10 @@ use PDO;
         $this->checkedFiledList($fildName, $value);
         $tableName = $this->getTableName();
 
-        $sql = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
+        $sql     = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
         $prepare = $this->getDbc()->prepare($sql);
         $execute = $prepare->execute([$value]);
-        $result = [];
+        $result  = [];
 
         if($execute){
             $result = $prepare->fetchAll(PDO::FETCH_OBJ);
@@ -167,11 +167,11 @@ use PDO;
 
        $this->checkedFiledList($fild,$value);
 
-        $sql = "SELECT * FROM {$table} WHERE {$fild} LIKE ?";
-        $prep = $this->getDbc()->prepare($sql);
-        $exeAeg = "%".$value."%";
+        $sql     = "SELECT * FROM {$table} WHERE {$fild} LIKE ?";
+        $prep    = $this->getDbc()->prepare($sql);
+        $exeAeg  = "%".$value."%";
         $execute = $prep->execute([$exeAeg]);
-        $result = [];
+        $result  = [];
 
         if($execute){
             $result = $prep->fetchAll(PDO::FETCH_OBJ);

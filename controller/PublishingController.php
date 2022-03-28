@@ -17,7 +17,7 @@ class PublishingController extends UserRole{
     }
 
     public function pub(){
-        $checked = filter_input(INPUT_POST, "valche", FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
+        $checked  = filter_input(INPUT_POST, "valche", FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
         $dateTime = date("Y-m-d H:i:s");
        
         $logMaterilaModel = new LogMaterialModel($this->getConnection());

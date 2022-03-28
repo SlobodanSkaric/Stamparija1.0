@@ -64,7 +64,7 @@ class MaterialController extends UserRole{
 
         
         
-        $logMaterial = new LogMaterialModel($this->getConnection());
+        $logMaterial      = new LogMaterialModel($this->getConnection());
         $iniMaterialModel = new IniMaterialModel($this->getConnection());
 
         if((new StringValidator())->stricStringLenght(12)->strictValid($nummaterial)){
