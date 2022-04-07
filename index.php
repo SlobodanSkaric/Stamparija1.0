@@ -61,7 +61,7 @@ if($controller instanceof \Pre\Controller\ApiController){
     ob_clean();
     header("Content-type: application/json; charset=utf-8");
     header("Access-Control-Allow-Origin: *");
-    echo json_encode($data);
+    if($data != []) echo json_encode($data);
     exit;
 }
 

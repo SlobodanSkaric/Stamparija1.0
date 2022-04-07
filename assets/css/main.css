@@ -151,3 +151,70 @@ tbody td a:hover{
     height: 410px;
     overflow: scroll;
 }
+
+
+
+.circlesr{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+tr > .messtextr{
+    background-color: rgba(160, 82, 82, 0.293);
+}
+
+tr > .messtextr > div{
+    height: 30px;
+    overflow: hidden;
+}
+
+.circlesg{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(50, 122, 46);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+tr > .messtextg{
+    background-color: rgba(66, 140, 75, 0.636);
+}
+
+tr > .messtextg > div{
+    height: 30px;
+    overflow: hidden;
+}
+.messtextr:hover{
+    cursor: pointer;
+}
+
+.messtextg:hover{
+    cursor: pointer;
+}
+
+.tbl > .messreadcl{
+    padding: 60px;
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    border: 1px solid silver;
+    top: 20%;
+    right: 25%;
+    left: 25%;
+    width: 50%;
+    height: 70vh;
+    visibility: hidden;
+    overflow: scroll;
+}
+
+.close{
+    position: absolute;
+    top: 3%;
+    right: 10px;
+}
+
