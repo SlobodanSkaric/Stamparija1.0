@@ -12,7 +12,7 @@ use Pre\Core\Session\SessionManaged;
 use Pre\Model\MainModel;
 
 $dbconfig   = new DatabaseConfiguration(ConfigurationPara::HOSTNAME,ConfigurationPara::USERNAME,ConfigurationPara::PASSWORD,ConfigurationPara::DBNAME,ConfigurationPara::CHARSET);
-$conne      = new DatabseConnection($dbconfig);
+$conne      = DatabseConnection::getInstnce($dbconfig);
 
 $url        = filter_input(INPUT_GET, "URL");
 $method     = filter_input(INPUT_SERVER, "REQUEST_METHOD");
@@ -37,10 +37,10 @@ $sessionPath      = ConfigurationPara::SESSION_PATH;
 $sessionInstance  = new $sesionDataconst(...$sessionPath);
 
 $fingerPrintClass  = ConfigurationPara::FINGER_PRINT_PDOVIDER_FACTORY;
-$fingerPrintethod  = ConfigurationPara:: FINGER_PRINT_METHOD;
+$fingerPrintMethod  = ConfigurationPara:: FINGER_PRINT_METHOD;
 $fingerPrintParam  = ConfigurationPara::FINGER_PRINT_PARAMETER;
 $fingerPrintFacIns = new $fingerPrintClass();
-$fingerPrint       = $fingerPrintFacIns->$fingerPrintethod($fingerPrintParam);
+$fingerPrint       = $fingerPrintFacIns->$fingerPrintMethod($fingerPrintParam);
 
 
 $session = new SessionManaged($sessionInstance, ConfigurationPara::SESSION_TIME);

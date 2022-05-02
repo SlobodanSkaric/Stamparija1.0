@@ -18,7 +18,7 @@ function getMessage(data){
        let status   = result.status;
        let circless = "circlesr";
        let messtexts= "messtextr";
-        console.log(noteText);
+
        if(status == 0){
            circless  = "circlesg";
            messtexts = "messtextg";
@@ -42,7 +42,7 @@ function getMessage(data){
 }
 
 async function loadText(data=null,noteId){
-   console.log()
+    
    await fetch("/press/api/message/update/"+noteId,{credentials: "include"});
     
    let messText = data.innerHTML;

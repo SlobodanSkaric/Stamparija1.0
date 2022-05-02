@@ -87,12 +87,12 @@ class MaterialController extends UserRole{
 
        foreach($arrIniNum as $iniNumKey => $iniNumVal){
             $iniNum = strval($iniNumKey);
-            var_dump($iniNum);
+
             $ini = $iniMaterialModel->add([
                 "number_material"     => $nummaterial,
                 "number_material_ini" => $iniNum,
                 "count_ini"           => $iniNumVal,
-                "user"                => $this->getSession()->get("user_id")
+                "user"                => $user
             ]);
         }
         
