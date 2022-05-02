@@ -9,11 +9,11 @@ function getUnreadMesage(){
 
 function getMessage(data){
     let mesall = document.querySelector(".messageAll");
-
+    console.log(data.unreadnotes);
     let table = "";
     //unreadnotes
 
-   data.unreadnotes.forEach(result => {
+   data.unreadnotes.reverse().forEach(result => {
        let noteText = result.note_text;
        let status   = result.status;
        let circless = "circlesr";

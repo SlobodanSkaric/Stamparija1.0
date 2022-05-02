@@ -59,13 +59,24 @@ body{
     padding: 0px;
 }
 
-.tbl > div{
-    padding: 0px;
+.tbl thead{
+    background-color: rgba(23, 36, 36, 0.596);
 }
 
-.tbl table > thead  {
+.tbl > div{
+    padding: 0px;
+    height: 76vh;
+}
+
+.tableWrap{
+    overflow: auto;
+}
+
+.tbl > .tableWrap > table > .theadpos tr th  {
     color: #fff;
-    background-color: rgba(23, 36, 36, 0.596);
+    background-color: rgb(54, 90, 90);
+    position: sticky;
+    top: 0;
 }
 
 .poc > nav >a{
@@ -152,8 +163,6 @@ tbody td a:hover{
     overflow: scroll;
 }
 
-
-
 .circlesr{
     width: 10px;
     height: 10px;
@@ -212,9 +221,21 @@ tr > .messtextg > div{
     overflow: scroll;
 }
 
+
 .close{
     position: absolute;
     top: 3%;
     right: 10px;
+}
+
+.numberMessage{
+    padding: 0px 6px 2px 6px;
+    background-color:  rgba(66, 140, 75, 0.636);
+    color:  #fff;
+    border-radius: 50%;
+    margin-left: 6px;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #fff;
 }
 
