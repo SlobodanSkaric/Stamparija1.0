@@ -20,7 +20,7 @@ return [
     #ApiRoute
     Pre\Core\Router::get("|^api/search/([0-9]+)$|",             "ApiSearch",        "search"),
     Pre\Core\Router::get("|^api/message/?$|",                   "ApiMessage",       "unrideNotes"),
-    Pre\Core\Router::get("|^api/message/update/([0-9]+)$|",    "ApiMessageUpdate",        "updateNote"),
+    Pre\Core\Router::get("|^api/message/update/([0-9]+)$|",     "ApiMessageUpdate", "updateNote"),
 
 
 

@@ -34,13 +34,13 @@ function getDisplay(data){
                 <tr class="text-center">
                     <th scope="row">${i+1}</th>
                     <td><a href="/press/material/${data.material[i].numbr_material}">${data.material[i].numbr_material}</a></td>
-                    <td><a href="#">${data.material[i].create_at}</a></td>
+                    <td>${data.material[i].create_at}</td>
                 </tr>
             `
         }
     }
 
-    if(( /http:\/\/localhost\/press\/publishing/).test(url)){
+    if((/http:\/\/localhost\/press\/publishing/).test(url)){
         for(var i = 0; i < data.material.length; i++){
             table +=  `
            

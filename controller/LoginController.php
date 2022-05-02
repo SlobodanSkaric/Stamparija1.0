@@ -15,7 +15,7 @@ class LoginController extends Controller{
         $userModel = new UserModel($this->getConnection());
 
         $usernameCheck = $userModel->getFild("username",$username);
-        $passwordCheck =  $usernameCheck->password_hash ?? "";
+        $passwordCheck = $usernameCheck->password_hash ?? "";
         
         if(!$usernameCheck){
             $this->set("message", "Ne postoji korisnik sa ovim korisnickim imenom.");

@@ -46,7 +46,7 @@ class Router{
         return $this->method;
     }
 
-    public function exractArgumnent( $url){
+    public function exractArgumnent($url){
         $arguments = [];
         $result= [];
 

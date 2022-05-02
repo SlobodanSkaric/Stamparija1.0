@@ -12,7 +12,7 @@ class DatabseConnection{
 
     public static function getInstnce(DatabaseConfiguration $dbconfig){
         if(!isset(self::$dbc)){
-            self::$dbc = new DatabseConnection($dbconfig);
+            self::$dbc = new static($dbconfig);
         }
        
         return self::$dbc;
