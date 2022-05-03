@@ -75,7 +75,7 @@ use PDO;
         $res     = [];
 
         if($execute){
-            $res = $prep->fetchAll(PDO::FETCH_OBJ);
+            $res = $prep->fetchAll();
         }
 
         return $res;
@@ -107,7 +107,7 @@ use PDO;
         $result  = [];
 
         if($execute){
-            $result = $prepare->fetchAll(PDO::FETCH_OBJ);
+            $result = $prepare->fetchAll();
         }
 
         return $result;
@@ -174,7 +174,7 @@ use PDO;
         $result  = [];
 
         if($execute){
-            $result = $prep->fetchAll(PDO::FETCH_OBJ);
+            $result = $prep->fetchAll();
         }
 
         return $result;
