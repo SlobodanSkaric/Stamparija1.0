@@ -84,7 +84,7 @@ use PDO;
     public function getFild($fildName, $value){
         $this->checkedFiledList($fildName, $value);
         $tableName = $this->getTableName();
-
+       // $this->getDbc()->quote($value);
         $sql     = "SELECT * FROM {$tableName} WHERE {$fildName}=?";
         $prepare = $this->getDbc()->prepare($sql);
         $execute = $prepare->execute([$value]);
